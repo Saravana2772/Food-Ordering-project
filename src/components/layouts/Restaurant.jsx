@@ -1,19 +1,25 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
-export default function Restaurant() {
+export default function Restaurant({restaurant}) {
   return (
     <>
       <div className="col-sm-12 col-md-6 col-lg-3 my-3">
         <div className="card p-3 rounded">
-            <img src="data:image/png;base64,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" alt="Dominos" />
+            <Link to={`/eats/stores/${restaurant._id}/menus`} className='btn btn-block'>
+              <img src={restaurant.images[0].url} alt={restaurant.name} className='card-img-top mx-auto'/>
+            </Link>
 
             <div className="card-body d-flex flex-column">
-                <h5 className="card-title">Dominos Pizza</h5>
-                <p className="rest_address">123 Street, Place, City - 000000, State</p>
+                <h5 className="card-title">{restaurant.name}</h5>
+                <p className="rest_address">{restaurant.address}</p>
 
+                <div className="ratings mt-auto">
                 <div className="rating-outer">
-                    <div className="rating-inner"></div>
-                        <span id="no_of_reviews"> 140 reviews</span>
+                    <div className="rating-inner" style={{width: `${(restaurant.ratings / 5)* 100}%`}}></div>
+                </div>
+                
+                        <span id="no_of_reviews"> {restaurant.numOfReviews} reviews</span>
                 </div>
             </div>
         </div>

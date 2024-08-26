@@ -1,11 +1,15 @@
 import React from 'react'
 import Search from './Search';
 
+import {Link} from "react-router-dom"
+
 export default function Header() {
   return <nav className="navbar row sticky-top">
     {/* LOGO */}
     <div className='col-12 col-md-3'>
-        <img src='/images/logo.webp' alt='logo' className='logo' />
+        <Link to="/">
+            <img src='/images/logo.webp' alt='logo' className='logo' />
+        </Link>
     </div>
     {/* SEARCH BAR */}
     <div className="col-12 col-md-6 mt-2 mt-md-6">
